@@ -1,0 +1,67 @@
+<footer id="contacto" class="bg-mc-red-dark text-white">
+  <div class="border-b border-white/20">
+    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 py-16 lg:flex-row lg:items-end lg:px-8">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[.25em] text-white/70">La parrilla te está esperando</p>
+        <h2 class="mt-4 max-w-4xl font-display text-[clamp(3.3rem,7vw,6.5rem)] leading-[.86] uppercase">¿Qué vamos a poner en la parrilla?</h2>
+      </div>
+      <a class="btn-light shrink-0" href="https://wa.me/541169364551?text=Hola%20MC%20Carne%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener noreferrer">
+        Hacer un pedido <svg lucideArrowUpRight [size]="20"></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="grid gap-x-10 gap-y-14 py-14 sm:grid-cols-2 sm:py-16 lg:grid-cols-[1.25fr_.8fr_1fr_1fr] lg:gap-x-14 lg:py-20">
+      <section aria-labelledby="footer-brand">
+        <h3 id="footer-brand" class="sr-only">MC Carne</h3>
+        <img src="image/logos/mc%20carne.svg?v=3" width="190" height="56" alt="MC Carne" class="h-14 w-48 object-contain object-left">
+        <p class="mt-6 max-w-xs text-[.95rem] leading-7 text-white/75">Buena carne, atención cercana y cortes seleccionados.</p>
+        <p class="mt-4 max-w-xs border-l-2 border-white/35 pl-3 text-[.68rem] font-extrabold uppercase leading-5 tracking-[.17em] text-white/55">Cortes seleccionados · Calidad de siempre</p>
+        <a class="footer-social-link mt-7" [href]="instagramUrl" target="_blank" rel="noopener noreferrer">
+          <svg lucideCamera [size]="18"></svg><span>@mc_carne</span>
+        </a>
+      </section>
+
+      <nav aria-labelledby="footer-navigation">
+        <h3 id="footer-navigation" class="footer-title">Navegación</h3>
+        <ul class="mt-5 space-y-0.5">
+          @for (item of navigation; track item.href) {
+            <li><a class="footer-link" [href]="item.href">{{ item.label }}</a></li>
+          }
+        </ul>
+      </nav>
+
+      <section aria-labelledby="footer-locations">
+        <h3 id="footer-locations" class="footer-title">Sucursales</h3>
+        <ul class="mt-5 space-y-1">
+          @for (location of locations; track location.name) {
+            <li>
+              <a class="footer-link group gap-2.5" [href]="location.mapsUrl" target="_blank" rel="noopener noreferrer">
+                <svg lucideMapPin [size]="16" class="shrink-0 text-white/45 transition-colors group-hover:text-white"></svg>
+                <span>{{ location.name }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </section>
+
+      <section aria-labelledby="footer-contact">
+        <h3 id="footer-contact" class="footer-title">Contacto</h3>
+        <p class="mt-5 text-[.68rem] font-extrabold uppercase tracking-[.16em] text-white/45">Instagram</p>
+        <a class="footer-social-link mt-2" [href]="instagramUrl" target="_blank" rel="noopener noreferrer">
+          <svg lucideCamera [size]="18"></svg><span>@mc_carne</span>
+        </a>
+        <p class="mt-8 text-[.68rem] font-extrabold uppercase leading-5 tracking-[.16em] text-white/45">Canal de ventas MC Carne</p>
+        <a class="footer-channel-link mt-3" [href]="salesChannelUrl" target="_blank" rel="noopener noreferrer">
+          <svg lucideMessageCircle [size]="18"></svg><span>Canal de ventas</span><svg lucideArrowUpRight [size]="16" class="ml-auto"></svg>
+        </a>
+      </section>
+    </div>
+
+    <div class="flex flex-col gap-3 border-t border-white/15 py-7 pb-24 text-[.66rem] font-bold uppercase leading-5 tracking-[.12em] text-white/45 sm:pb-20 lg:flex-row lg:items-center lg:justify-between lg:pb-8">
+      <p>© 2026 MC Carne · Todos los derechos reservados</p>
+      <p>Monte Grande · Ezeiza · El Jagüel · Luis Guillón</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,16 @@
+<section id="inicio" class="paper-grid relative overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-24">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
+    <div class="relative z-10">
+      <p class="reveal reveal-1 stamp-badge">★ Butcher shop ★ Monte Grande</p>
+      <h1 class="reveal reveal-2 mt-6 max-w-4xl font-display text-[clamp(4rem,9vw,8.4rem)] leading-[.82] uppercase tracking-[-.035em] text-mc-black">Buena carne.<br><span class="text-mc-red">Buenos momentos.</span></h1>
+      <p class="reveal reveal-3 mt-7 max-w-xl text-lg leading-relaxed text-neutral-700">Cortes seleccionados, atención cercana y esa calidad que transforma cualquier comida en un buen encuentro.</p>
+      <div class="reveal reveal-4 mt-8 flex flex-col gap-3 sm:flex-row"><a class="btn-primary justify-center" href="#productos">Ver nuestros cortes <svg lucideArrowDownRight [size]="20"></svg></a><a class="btn-outline justify-center" href="https://wa.me/541169364551?text=Hola%20MC%20Carne%2C%20quer%C3%ADa%20consultar" target="_blank" rel="noopener"><svg lucideMessageCircle [size]="20"></svg> Consultar por WhatsApp</a></div>
+      <div class="mt-10 flex items-center gap-5 text-xs font-extrabold uppercase tracking-[.18em]"><span>Selección diaria</span><span class="h-px w-10 bg-mc-red"></span><span>Corte a medida</span></div>
+    </div>
+    <div class="reveal reveal-3 relative mx-auto w-full max-w-xl lg:ml-auto">
+      <div class="double-frame relative aspect-[5/6] overflow-hidden bg-mc-kraft"><img src="image/carnes/carne1.png" (error)="onImageError($event)" width="500" height="728" alt="Selección de carnes frescas de MC Carne" fetchpriority="high" class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"></div>
+      <div class="quality-seal absolute -bottom-8 -left-3 grid size-36 rotate-[-10deg] place-items-center rounded-full bg-mc-red text-center text-white shadow-xl sm:-left-10 sm:size-44"><span class="px-5 font-display text-sm uppercase leading-tight tracking-[.18em]">MC Carne<br>★ Quality cuts ★<br>Monte Grande</span></div>
+      <span class="absolute -right-3 -top-4 bg-mc-black px-4 py-2 font-display text-sm uppercase tracking-widest text-white">Selected cuts / 01</span>
+    </div>
+  </div>
+</section>
