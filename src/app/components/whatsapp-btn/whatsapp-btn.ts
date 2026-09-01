@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, ElementRef, HostListener, signal, viewChild } from '@angular/core';
 import { LucideMapPin, LucideX } from '@lucide/angular';
 import { BRANCHES, BranchLocation, whatsappUrl } from '../../data/locations';
 
@@ -11,7 +11,7 @@ import { BRANCHES, BranchLocation, whatsappUrl } from '../../data/locations';
       <section class="whatsapp-panel" role="dialog" aria-modal="true" aria-labelledby="whatsapp-title">
         <div class="flex items-start justify-between gap-4 border-b border-black/10 px-4 py-3">
           <div><p class="text-[.65rem] font-black uppercase tracking-[.16em] text-mc-red">WhatsApp</p><h2 id="whatsapp-title" class="mt-1 font-display text-2xl uppercase leading-none">¿Dónde querés hacer tu pedido?</h2></div>
-          <button type="button" class="grid size-9 shrink-0 place-items-center rounded-full hover:bg-black/5" (click)="close()" aria-label="Cerrar selector"><svg lucideX [size]="20"></svg></button>
+          <button #closeButton type="button" class="grid size-9 shrink-0 place-items-center rounded-full hover:bg-black/5" (click)="close()" aria-label="Cerrar selector"><svg lucideX [size]="20"></svg></button>
         </div>
         <div class="max-h-[min(24rem,55vh)] space-y-2 overflow-y-auto p-3">
           @for (branch of branches; track branch.name) {
@@ -26,8 +26,17 @@ import { BRANCHES, BranchLocation, whatsappUrl } from '../../data/locations';
 export class WhatsappBtnComponent {
   readonly branches = BRANCHES;
   readonly open = signal(false);
-  toggle(): void { this.open.update(value => !value); }
-  close(): void { this.open.set(false); }
+  readonly closeButton = viewChild<ElementRef<HTMLButtonElement>>('closeButton');
+  toggle(): void {
+    if (this.open()) { this.close(); return; }
+    this.open.set(true);
+    setTimeout(() => this.closeButton()?.nativeElement.focus());
+  }
+  close(): void {
+    if (!this.open()) return;
+    this.open.set(false);
+    setTimeout(() => document.querySelector<HTMLButtonElement>('.whatsapp-float')?.focus());
+  }
   urlFor(branch: BranchLocation): string { return whatsappUrl(branch); }
   @HostListener('document:keydown.escape') onEscape(): void { this.close(); }
 }

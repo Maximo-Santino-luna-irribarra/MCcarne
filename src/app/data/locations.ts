@@ -12,10 +12,10 @@ const SHARED_CONTACT = { phoneDisplay: '011 6936-4551', phone: '+541169364551', 
 
 /** Fuente única para ubicación, footer y selector de WhatsApp. */
 export const BRANCHES: readonly BranchLocation[] = [
-  { name: 'Monte Grande', address: 'Ramón Santamarina 1066, Monte Grande / El Jagüel, Buenos Aires', mapsUrl: 'https://maps.app.goo.gl/qbfSWJ317WE7B4cf9?g_st=ic', ...SHARED_CONTACT },
-  { name: 'Ezeiza', mapsUrl: 'https://maps.app.goo.gl/b4APFALg2VY2fJP46?g_st=ic', ...SHARED_CONTACT },
-  { name: 'El Jagüel', mapsUrl: 'https://maps.app.goo.gl/64yrxU1fcaH4tX6V9?g_st=ic', ...SHARED_CONTACT },
-  { name: 'Luis Guillón', mapsUrl: 'https://maps.app.goo.gl/k4oWik1gVCHZWxbH8?g_st=ic', ...SHARED_CONTACT }
+  { name: 'Monte Grande', address: 'Ramón Santamarina 1066, B1842 El Jagüel, Buenos Aires', mapsUrl: 'https://maps.app.goo.gl/qbfSWJ317WE7B4cf9?g_st=ic', ...SHARED_CONTACT },
+  { name: 'Ezeiza', address: 'Paso de la Patria 4, B1804 Ezeiza, Buenos Aires', mapsUrl: 'https://maps.app.goo.gl/b4APFALg2VY2fJP46?g_st=ic', ...SHARED_CONTACT },
+  { name: 'El Jagüel', address: 'Evita 355, B1805 El Jagüel, Buenos Aires', mapsUrl: 'https://maps.app.goo.gl/64yrxU1fcaH4tX6V9?g_st=ic', ...SHARED_CONTACT },
+  { name: 'Luis Guillón', address: 'Av. Nicolás Bruzone 1500, B1842 Luis Guillón, Buenos Aires', mapsUrl: 'https://maps.app.goo.gl/k4oWik1gVCHZWxbH8?g_st=ic', ...SHARED_CONTACT }
 ];
 
 export function whatsappUrl(branch: BranchLocation): string {
