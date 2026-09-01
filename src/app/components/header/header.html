@@ -1,13 +1,13 @@
 <header class="fixed inset-x-0 top-0 z-50 border-b border-mc-red/25 bg-mc-white/95 backdrop-blur" [class.shadow-lg]="compact()">
-  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-    <a href="#inicio" aria-label="MC Carne, inicio" class="flex h-16 items-center"><img src="image/logos/mc%20carne.svg?v=3" width="172" height="50" alt="MC Carne" class="h-12 w-44 object-contain object-left"></a>
-    <nav class="hidden items-center gap-6 lg:flex" aria-label="Navegación principal">
+  <div class="mx-auto flex h-20 max-w-7xl min-w-0 items-center justify-between gap-3 px-4 sm:px-5 xl:px-8">
+    <a href="#inicio" aria-label="MC Carne, inicio" class="flex h-16 min-w-0 shrink items-center"><img src="image/logos/mc%20carne.svg?v=3" width="172" height="50" alt="MC Carne" class="h-11 w-36 object-contain object-left sm:h-12 sm:w-44"></a>
+    <nav class="hidden min-w-0 items-center gap-4 xl:flex 2xl:gap-6" aria-label="Navegación principal">
       @for (link of [['Inicio','#inicio'],['Productos','#productos'],['Ofertas','#ofertas'],['Nosotros','#nosotros'],['Galería','#galeria'],['Ubicación','#ubicacion']]; track link[1]) { <a class="nav-link" [href]="link[1]">{{ link[0] }}</a> }
     </nav>
-    <a class="btn-primary hidden lg:inline-flex" href="https://wa.me/541169364551?text=Hola%20MC%20Carne%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"><svg lucideShoppingBag [size]="18"></svg> Hacer un pedido</a>
-    <button type="button" class="grid size-11 place-items-center border border-mc-red text-mc-red lg:hidden" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-controls="mobile-menu" aria-label="Abrir menú">@if (menuOpen()) { <svg lucideX></svg> } @else { <svg lucideMenu></svg> }</button>
+    <a class="btn-primary hidden shrink-0 xl:inline-flex" href="https://wa.me/541169364551?text=Hola%20MC%20Carne%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"><svg lucideShoppingBag [size]="18"></svg> Hacer un pedido</a>
+    <button type="button" class="grid size-11 shrink-0 place-items-center border border-mc-red text-mc-red xl:hidden" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()" aria-controls="mobile-menu" aria-label="Abrir menú">@if (menuOpen()) { <svg lucideX></svg> } @else { <svg lucideMenu></svg> }</button>
   </div>
-  <div id="mobile-menu" class="mobile-panel lg:hidden" [class.mobile-panel-open]="menuOpen()" [attr.aria-hidden]="!menuOpen()">
+  <div id="mobile-menu" class="mobile-panel xl:hidden" [class.mobile-panel-open]="menuOpen()" [attr.aria-hidden]="!menuOpen()" [attr.inert]="menuOpen() ? null : ''">
     <nav class="flex flex-col px-6 py-5">@for (link of [['Inicio','#inicio'],['Productos','#productos'],['Ofertas','#ofertas'],['Nosotros','#nosotros'],['Galería','#galeria'],['Ubicación','#ubicacion']]; track link[1]) { <a class="border-b border-mc-red/15 py-3 font-bold uppercase tracking-wider" [href]="link[1]" (click)="closeMenu()">{{ link[0] }}</a> }<a class="btn-primary mt-5 justify-center" href="https://wa.me/541169364551?text=Hola%20MC%20Carne%2C%20quiero%20hacer%20un%20pedido">Hacer un pedido</a></nav>
   </div>
 </header>

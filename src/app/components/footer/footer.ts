@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { LucideArrowUpRight, LucideCamera, LucideMapPin, LucideMessageCircle } from '@lucide/angular';
-import { INSTAGRAM_URL, LOCATIONS, SALES_CHANNEL_URL } from '../../data/locations';
+import { LucideArrowUpRight, LucideCamera, LucideClock3, LucideMapPin, LucideMessageCircle, LucidePhone } from '@lucide/angular';
+import { BRANCHES, INSTAGRAM_URL, SALES_CHANNEL_URL } from '../../data/locations';
 
 @Component({
   selector: 'app-footer',
-  imports: [LucideArrowUpRight, LucideCamera, LucideMapPin, LucideMessageCircle],
+  imports: [LucideArrowUpRight, LucideCamera, LucideClock3, LucideMapPin, LucideMessageCircle, LucidePhone],
   templateUrl: './footer.html'
 })
 export class FooterComponent {
-  readonly locations = LOCATIONS;
+  readonly locations = BRANCHES;
+  readonly contact = BRANCHES[0];
   readonly instagramUrl = INSTAGRAM_URL;
   readonly salesChannelUrl = SALES_CHANNEL_URL;
   readonly navigation = [
